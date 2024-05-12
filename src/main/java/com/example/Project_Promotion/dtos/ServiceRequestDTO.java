@@ -1,27 +1,20 @@
-package Models;
-// Service.java
-import javax.persistence.*;
-
-@Entity
-@Table(name = "services")
-public class Service {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+package com.example.Project_Promotion.dtos;
+public class ServiceRequestDTO {
     private String name;
     private String description;
     private double price;
 
-    public Long getId() {
-        return id;
+    // Constructors
+    public ServiceRequestDTO() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public ServiceRequestDTO(String name, String description, double price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
     }
 
+    // Getters and setters
     public String getName() {
         return name;
     }
@@ -45,7 +38,4 @@ public class Service {
     public void setPrice(double price) {
         this.price = price;
     }
-// Other relevant fields
-
-    // Getters and setters
 }

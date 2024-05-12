@@ -1,31 +1,22 @@
-// Product.java
-
-package Models;
-
-import javax.persistence.*;
-
-@Entity
-@Table(name = "products")
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+package com.example.Project_Promotion.dtos;
+public class ServiceResponseDTO {
     private Long id;
-
     private String name;
     private String description;
     private double price;
 
-    // Constructors, getters, and setters
-    public Product() {
+    // Constructors
+    public ServiceResponseDTO() {
     }
 
-    public Product(String name, String description, double price) {
+    public ServiceResponseDTO(Long id, String name, String description, double price) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
     }
 
+    // Getters and setters
     public Long getId() {
         return id;
     }

@@ -1,4 +1,4 @@
-package Exception;
+package com.example.Project_Promotion.Exception;
 // ResourceNotFoundException.java
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

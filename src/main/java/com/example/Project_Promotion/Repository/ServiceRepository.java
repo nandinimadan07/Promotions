@@ -1,10 +1,10 @@
-package Repository;
+package com.example.Project_Promotion.Repository;
 
-import Models.Service; // Import the Service class from your Models package
+import com.example.Project_Promotion.Models.Service; // Import the Service class from your Models package
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
-public interface ServiceRepository extends JpaRepository<Service, Long> {
+public interface ServiceRepository {
 
     Optional<Service> findById(Long id);
 
