@@ -17,7 +17,7 @@ public class ServiceController {
 
     @PostMapping
     public ResponseEntity<Service> addService(@RequestBody Service service) {
-        Service addedService = serviceService.addService(service);
+        Service addedService = (Service) serviceService.addService((Models.Service) service);
         return new ResponseEntity<>(addedService, HttpStatus.CREATED);
     }
 
@@ -29,7 +29,7 @@ public class ServiceController {
 
     @PutMapping("/{serviceId}")
     public ResponseEntity<Service> updateService(@PathVariable Long serviceId, @RequestBody Service service) {
-        Service updatedService = serviceService.updateService(serviceId, service);
+        Service updatedService = (Service) serviceService.updateService(serviceId, (Models.Service) service);
         return new ResponseEntity<>(updatedService, HttpStatus.OK);
     }
 }

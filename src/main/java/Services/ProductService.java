@@ -1,7 +1,7 @@
-package Services;
 
 // ProductService.java
-// ProductService.java
+
+package Services;
 
 import Models.Product;
 import Repository.ProductRepository;
@@ -32,8 +32,12 @@ public class ProductService {
     }
 
     public Product updateProduct(Long productId, Product product) {
-        product.setId(productId); // Ensure ID consistency
-        return productRepository.save(product);
+        Product existingProduct = getProductById(productId);
+        existingProduct.setName(product.getName());
+        existingProduct.setDescription(product.getDescription());
+        existingProduct.setPrice(product.getPrice());
+        // Set other attributes as needed
+        return productRepository.save(existingProduct);
     }
 
     public void deleteProduct(Long productId) {
